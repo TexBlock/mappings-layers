@@ -27,6 +27,7 @@ publishing {
     }
 
     repositories {
+        /*
         if (System.getenv("MAVEN_PASS") != null) {
             maven {
                 url = "https://deploy.shedaniel.me/"
@@ -36,5 +37,6 @@ publishing {
                 }
             }
         }
+         */
     }
 }

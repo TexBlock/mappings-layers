@@ -22,11 +22,14 @@ package dev.architectury.mappingslayers;
 import org.gradle.api.NonNullApi;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.plugins.PluginAware;
 
 @NonNullApi
-public class MappingsLayersPlugin implements Plugin<Project> {
+public class MappingsLayersPlugin implements Plugin<PluginAware> {
     @Override
-    public void apply(Project project) {
-        project.getExtensions().create("mappingsLayers", MappingsLayersExtension.class, project);
+    public void apply(PluginAware target) {
+        if (target instanceof Project project) {
+            project.getExtensions().create("mappingsLayers", MappingsLayersExtension.class, project);
+        }
     }
 }

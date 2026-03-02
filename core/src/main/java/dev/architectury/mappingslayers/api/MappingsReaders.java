@@ -38,7 +38,7 @@ public final class MappingsReaders {
     private MappingsReaders() {}
     
     public static Mappings readDetection(Path file) {
-        try (FileSystem fs = FileSystems.newFileSystem(file, null)) {
+        try (FileSystem fs = FileSystems.newFileSystem(file)) {
             Path tinyPath = fs.getPath("mappings/mappings.tiny");
             if (Files.exists(tinyPath)) {
                 byte[] bytes = Files.readAllBytes(tinyPath);

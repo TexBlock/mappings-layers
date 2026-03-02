@@ -11,7 +11,7 @@ gradlePlugin {
     automatedPublishing = false
     plugins {
         fabricLoom {
-            id = "dev.architectury.mappings-layers-plugin"
+            id = "me.textrue.mappings-layers-plugin"
             implementationClass = "dev.architectury.mappingslayers.MappingsLayersPlugin"
         }
     }
@@ -31,8 +31,8 @@ publishing {
         }
 
         plugin(MavenPublication) {
-            groupId "dev.architectury.mappings-layers-plugin"
-            artifactId "dev.architectury.mappings-layers-plugin.gradle.plugin"
+            groupId "me.textrue.mappings-layers-plugin"
+            artifactId "me.textrue.mappings-layers-plugin.gradle.plugin"
 
             from components.java
         }
@@ -46,8 +46,8 @@ publishing {
         }
 
         pluginSnapshot(MavenPublication) {
-            groupId "dev.architectury.mappings-layers-plugin"
-            artifactId "dev.architectury.mappings-layers-plugin.gradle.plugin"
+            groupId "me.textrue.mappings-layers-plugin"
+            artifactId "me.textrue.mappings-layers-plugin.gradle.plugin"
             version baseVersion + "-SNAPSHOT"
 
             pom.withXml {
@@ -67,6 +67,7 @@ publishing {
     }
 
     repositories {
+        /*
         if (System.getenv("MAVEN_PASS") != null) {
             maven {
                 url = "https://deploy.shedaniel.me/"
@@ -76,5 +77,6 @@ publishing {
                 }
             }
         }
+         */
     }
 }
